@@ -1,11 +1,11 @@
 {
-  "version": "0.14.1",
-  "notes": "# Punk Agent 0.14.1 Preview\n\n- 新增「设置 → 软件更新」：支持启动时检查、预览版/稳定版通道、下载进度、重试和手动安装重启。\n- 更新信息和安装包均验证签名，安装前等待全部智能体任务、终端工具和上下文整理完成。\n- 更新重启时保留当前未发送文字、附件、引用及对话/项目/分组位置；安装失败后恢复操作。\n- 源码继续保持私有，公开仓库仅提供安装包、签名、更新信息和校验文件。\n\n0.14.0 及更早版本需要先手动安装此版本一次；后续版本可在应用内获取。当前为预览版，尚未验证真实跨版本升级的全部场景。\n",
-  "pub_date": "2026-10-26T03:02:11.0684539Z",
+  "version": "0.14.2",
+  "notes": "# Punk Agent 0.14.2 Preview\n\n- 修复审批勾选、详情和撤销操作误跳转到对话的问题。\n- 修复连接搜索服务时误发送聊天草稿的问题。\n- 修复返回聊天后模型、目录授权和搜索配置没有及时更新的问题。\n- 修复项目、模型服务重复创建，以及旧请求覆盖当前项目或对话状态的问题。\n- 修复保存参数时新输入丢失、设置互相覆盖，以及操作失败后无法重试的问题。\n- 完善模型移除确认、能力探测反馈、更新草稿恢复和窗口操作错误提示。\n- 修复侧栏按钮点击区域和宽度、折叠设置的保存问题。\n\n本安装包包含 2026-10-26 的 UI 按钮审计修复。Desktop 和 Core 版本统一为 0.14.2，数据格式保持 schema 23。已使用新版试用程序的数据，请安装本版本或更高版本，避免再安装旧的 0.14.0 内部包。\n\n0.14.1 用户可通过「设置 → 软件更新」的预览版通道获取更新；更早版本可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名和校验文件。\n",
+  "pub_date": "2026-10-27T11:07:20.7508172Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.1-preview.1/Punk-Agent-0.14.1-windows-x86_64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeGlHN05sNi81MXhZOUxSVGNIZXdkTVRsQTg1YjJlVTRYVUl2d1c4aEI2SXJhV09EbGtIc3BEdStBNDVWOTBWdVBPa0hweFF2UDBhWEI2dkdMcW1DOVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTgzNzE5CWZpbGU6UHVuayBBZ2VudF8wLjE0LjFfeDY0LXNldHVwLmV4ZQpOU0hKMEVQWmVHRnFyQkYxekxJazJqTGRrT0F4eHJCWW5xbm00VlBTRFVHdWtUZE9HaGpya00yL3FlWTBzcG1zTm12emcyaUdiNTd6aE9tdU5CV0xBZz09Cg=="
+      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.2-preview.1/Punk-Agent-0.14.2-windows-x86_64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHFrdGxsYzM1cEdxUjNKaGZxdXBnNEF0WHIrc3NkbzFKdFllTlU3dTVSUkxTNDB4OVFRcEFmNC9VYlIzNHlEVWN5MktxN0ZVa1VvSWw0WDdDWWpRL0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDk5MjMwCWZpbGU6UHVuayBBZ2VudF8wLjE0LjJfeDY0LXNldHVwLmV4ZQo3NWtRdUZEYVdoT1lTaXdrMk51eFBTSkdYb2RNM095Vk92Wk1nQkhOM0xYeDVtOEVKMHlHaXlmVGdlS3I5MUZhZHRtSWxQbVR6SnF4ajBpWitUM3BEdz09Cg=="
     }
   }
 }
