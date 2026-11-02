@@ -1,11 +1,11 @@
 {
-  "version": "0.14.2",
-  "notes": "# Punk Agent 0.14.2 Preview\n\n- 修复审批勾选、详情和撤销操作误跳转到对话的问题。\n- 修复连接搜索服务时误发送聊天草稿的问题。\n- 修复返回聊天后模型、目录授权和搜索配置没有及时更新的问题。\n- 修复项目、模型服务重复创建，以及旧请求覆盖当前项目或对话状态的问题。\n- 修复保存参数时新输入丢失、设置互相覆盖，以及操作失败后无法重试的问题。\n- 完善模型移除确认、能力探测反馈、更新草稿恢复和窗口操作错误提示。\n- 修复侧栏按钮点击区域和宽度、折叠设置的保存问题。\n\n本安装包包含 2026-10-26 的 UI 按钮审计修复。Desktop 和 Core 版本统一为 0.14.2，数据格式保持 schema 23。已使用新版试用程序的数据，请安装本版本或更高版本，避免再安装旧的 0.14.0 内部包。\n\n0.14.1 用户可通过「设置 → 软件更新」的预览版通道获取更新；更早版本可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名和校验文件。\n",
-  "pub_date": "2026-10-27T11:07:20.7508172Z",
+  "version": "0.14.3",
+  "notes": "# Punk Agent 0.14.3 Preview\n\n- 联网搜索缺少可核验来源时，自动保留并整理返回内容，提示准确性和时效性未经核验，继续给出参考回答。\n- 未收到搜索执行记录时，明确提示“无法确认本轮已联网”，不再因此直接中断整轮回答。\n- 外接搜索缺少来源时，保留服务返回的正文，供模型整理为未经核验的参考内容。\n- 移除因回答包含“搜索结果”“最新消息”等词而整段替换内容的规则。\n- 修复搜索未实际执行时，被错误展示为通用 internal_error 的提示问题。\n\n本安装包包含提交 2b44f1f 的联网搜索降级修复。Desktop、Host 和 Core 版本统一为 0.14.3，数据格式保持 schema 23。\n\n0.14.1 及以上版本可在「设置 → 软件更新」选择预览版通道获取更新，也可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名、校验文件和更新元数据。\n",
+  "pub_date": "2026-11-02T10:43:12.0620037Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.2-preview.1/Punk-Agent-0.14.2-windows-x86_64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHFrdGxsYzM1cEdxUjNKaGZxdXBnNEF0WHIrc3NkbzFKdFllTlU3dTVSUkxTNDB4OVFRcEFmNC9VYlIzNHlEVWN5MktxN0ZVa1VvSWw0WDdDWWpRL0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDk5MjMwCWZpbGU6UHVuayBBZ2VudF8wLjE0LjJfeDY0LXNldHVwLmV4ZQo3NWtRdUZEYVdoT1lTaXdrMk51eFBTSkdYb2RNM095Vk92Wk1nQkhOM0xYeDVtOEVKMHlHaXlmVGdlS3I5MUZhZHRtSWxQbVR6SnF4ajBpWitUM3BEdz09Cg=="
+      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.3-preview.1/Punk-Agent-0.14.3-windows-x86_64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHMrYSt4SmNaZjcrYVlBVVZQSDRMWjJML2JMak5uS0xoUUJhOFc4TGZ5TmEyeE4vU1M1Y2lEZjh3dFRjblc5M3NYank3UUtON0hIMVN2SzlhZU5XR2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjE2MTgwCWZpbGU6UHVuayBBZ2VudF8wLjE0LjNfeDY0LXNldHVwLmV4ZQpsS25kdi9wYSt2TDk0RzJwVFRvRHN1NDZDd0ZCVERRVFhQSTNMTjN5OTF3SUFSYmtiRlFCNHpiVElBbjFLT1dCSUdDek1QbEZETzZrMU5Fa0tJTHBBUT09Cg=="
     }
   }
 }
