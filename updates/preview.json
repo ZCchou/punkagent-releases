@@ -1,11 +1,11 @@
 {
-  "version": "0.14.3",
-  "notes": "# Punk Agent 0.14.3 Preview\n\n- 联网搜索缺少可核验来源时，自动保留并整理返回内容，提示准确性和时效性未经核验，继续给出参考回答。\n- 未收到搜索执行记录时，明确提示“无法确认本轮已联网”，不再因此直接中断整轮回答。\n- 外接搜索缺少来源时，保留服务返回的正文，供模型整理为未经核验的参考内容。\n- 移除因回答包含“搜索结果”“最新消息”等词而整段替换内容的规则。\n- 修复搜索未实际执行时，被错误展示为通用 internal_error 的提示问题。\n\n本安装包包含提交 2b44f1f 的联网搜索降级修复。Desktop、Host 和 Core 版本统一为 0.14.3，数据格式保持 schema 23。\n\n0.14.1 及以上版本可在「设置 → 软件更新」选择预览版通道获取更新，也可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名、校验文件和更新元数据。\n",
-  "pub_date": "2026-11-02T10:43:12.0620037Z",
+  "version": "0.14.4",
+  "notes": "# Punk Agent 0.14.4 Preview\n\n- 新增模型可主动调用的 `context.compact` 工具：模型先提交工作摘要，Core 压缩当前任务的较早上下文后继续执行，不额外请求摘要模型。\n- 每次模型调用前提供实时上下文占用估算、输入预算和剩余空间，供模型自行判断压缩时机。\n- 压缩保留当前问题及附件、系统指令、已确认项目知识、当前整批工具调用及结果；原始聊天与工具审计不删除，已完成操作不重放。\n- 压缩失败或摘要没有节省空间时保留原上下文，返回原因并继续回答。原生和结构化工具协议均支持。\n- 聊天过程区展示压缩结果与估算 Token 变化，支持重新打开会话后查看。\n- 保留 0.14.3 的联网搜索自动降级修复。\n\nDesktop、Host 和 Core 版本统一为 0.14.4，IPC 保持 16，数据格式升级为 schema 24。升级前会自动创建包含已提交 WAL 数据的备份，迁移异常会回滚。旧版 Core 无法读取升级后的数据；如需回退，请使用升级前的对应备份。\n\n支持工具调用的模型可使用主动压缩；纯文本模型继续使用现有自动历史整理机制。主动压缩针对当前执行中的任务，后续新消息仍由自动历史压缩机制管理。\n\n0.14.1 及以上版本可在「设置 → 软件更新」选择预览版通道获取更新，也可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名、校验文件和更新元数据。\n",
+  "pub_date": "2026-11-03T09:16:08.0108726Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.3-preview.1/Punk-Agent-0.14.3-windows-x86_64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHMrYSt4SmNaZjcrYVlBVVZQSDRMWjJML2JMak5uS0xoUUJhOFc4TGZ5TmEyeE4vU1M1Y2lEZjh3dFRjblc5M3NYank3UUtON0hIMVN2SzlhZU5XR2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjE2MTgwCWZpbGU6UHVuayBBZ2VudF8wLjE0LjNfeDY0LXNldHVwLmV4ZQpsS25kdi9wYSt2TDk0RzJwVFRvRHN1NDZDd0ZCVERRVFhQSTNMTjN5OTF3SUFSYmtiRlFCNHpiVElBbjFLT1dCSUdDek1QbEZETzZrMU5Fa0tJTHBBUT09Cg=="
+      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.4-preview.1/Punk-Agent-0.14.4-windows-x86_64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHF2RUlobkpEaWZrSmFVajBJNzNTY1I4WktTUkFrSWZDVXVVWDBzeGRHRGNmZFRvZlpxUjlZS2dncnJuM25tbjgvRjFqT3BRZHAvWEx0eThpMzJVbndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjk3MzU1CWZpbGU6UHVuayBBZ2VudF8wLjE0LjRfeDY0LXNldHVwLmV4ZQphU1VkT25kSWk5emgvZzh3VnBmR1ZGTDFoeTYwMnpySVVPSUVTTEgxVGU2K0tldGNTc3E5RS91bVdjVVlxS3MzY01ZUzNncnhJNFJLZmx4aEVCK2xCdz09Cg=="
     }
   }
 }
