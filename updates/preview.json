@@ -1,11 +1,11 @@
 {
-  "version": "0.14.4",
-  "notes": "# Punk Agent 0.14.4 Preview\n\n- 新增模型可主动调用的 `context.compact` 工具：模型先提交工作摘要，Core 压缩当前任务的较早上下文后继续执行，不额外请求摘要模型。\n- 每次模型调用前提供实时上下文占用估算、输入预算和剩余空间，供模型自行判断压缩时机。\n- 压缩保留当前问题及附件、系统指令、已确认项目知识、当前整批工具调用及结果；原始聊天与工具审计不删除，已完成操作不重放。\n- 压缩失败或摘要没有节省空间时保留原上下文，返回原因并继续回答。原生和结构化工具协议均支持。\n- 聊天过程区展示压缩结果与估算 Token 变化，支持重新打开会话后查看。\n- 保留 0.14.3 的联网搜索自动降级修复。\n\nDesktop、Host 和 Core 版本统一为 0.14.4，IPC 保持 16，数据格式升级为 schema 24。升级前会自动创建包含已提交 WAL 数据的备份，迁移异常会回滚。旧版 Core 无法读取升级后的数据；如需回退，请使用升级前的对应备份。\n\n支持工具调用的模型可使用主动压缩；纯文本模型继续使用现有自动历史整理机制。主动压缩针对当前执行中的任务，后续新消息仍由自动历史压缩机制管理。\n\n0.14.1 及以上版本可在「设置 → 软件更新」选择预览版通道获取更新，也可手动下载安装包。源码继续保留在私有仓库，公开仓库仅提供安装包、签名、校验文件和更新元数据。\n",
-  "pub_date": "2026-11-03T09:16:08.0108726Z",
+  "version": "0.16.0",
+  "notes": "# Punk Agent 0.16.0\n\n新增工具管理和智能体自建工具能力。\n\n- 系统功能和设置提供同一工具管理入口，支持查看代码、编辑、测试和停止运行任务。\n- 用户与智能体的工具变更自动同步到已打开的管理页和项目设置页，保留未保存草稿。\n- 内置工具固定；用户与智能体可以创建 PowerShell、Node、Python 工具，运行环境按 Host 实际探测提供。\n- 新工具默认全局可用；支持全局禁用及项目单独禁用，编辑保留身份和用户开关。\n- 删除必须经用户确认；删除或禁用阻止后续启动，已运行任务及历史审计保留。\n- 模型删除警告展示已知项目引用；引用较多时明确提示剩余数量和完整列表入口。\n- 模型每轮刷新目录，通过固定管理工具发现、保存、检查和调用版本化工具；失败返回可读原因。\n- 私密参数通过易失引用传递，结果保留实际进程输出和退出状态，语法检查与功能测试分别记录。\n\n同步版本：IPC 18、Core schema 26；settings schema 19 不变。迁移前备份包含 WAL 的数据库，迁移失败回滚。\n\n本地验证记录见 `docs/testing/tool-management-acceptance.md`。本次修改不自动发布远程 Release。\n",
+  "pub_date": "2026-11-10T12:27:36.3981627Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.14.4-preview.1/Punk-Agent-0.14.4-windows-x86_64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHF2RUlobkpEaWZrSmFVajBJNzNTY1I4WktTUkFrSWZDVXVVWDBzeGRHRGNmZFRvZlpxUjlZS2dncnJuM25tbjgvRjFqT3BRZHAvWEx0eThpMzJVbndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjk3MzU1CWZpbGU6UHVuayBBZ2VudF8wLjE0LjRfeDY0LXNldHVwLmV4ZQphU1VkT25kSWk5emgvZzh3VnBmR1ZGTDFoeTYwMnpySVVPSUVTTEgxVGU2K0tldGNTc3E5RS91bVdjVVlxS3MzY01ZUzNncnhJNFJLZmx4aEVCK2xCdz09Cg=="
+      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.16.0-preview.1/Punk-Agent-0.16.0-windows-x86_64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHEvcWpFdnBlVlU4bW1qTGJ6NExZUXBPcEpGdER6OTlFUTFYVGdBNWhraHJhUjlIQWhKdnQ3Q0Y0RHYzdVprUTc1UnJiVFlDVTBrR3ZZSFFVQzFlRndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzEzNjQ1CWZpbGU6UHVuayBBZ2VudF8wLjE2LjBfeDY0LXNldHVwLmV4ZQpkckdSTDlPV3ZEbGJOQXVHelNwMEFKNUJYczJZRHkvbVNScW1FZ1VRbkpRTldOWHB6YTY5cDhCM29XUWlNNDVubjNZSExzWFoveVIvbE8remxZM3FEdz09Cg=="
     }
   }
 }
