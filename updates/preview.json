@@ -1,11 +1,11 @@
 {
-  "version": "0.16.1",
-  "notes": "# Punk Agent 0.16.1\n\n修复多文件技能导入不完整、资源无法发现及读取失败诊断不足的问题。\n\n- 默认完整复制技能文件夹；可关联原目录，预览后再导入。\n- 同名技能支持补齐缺失资源、更换来源或创建独立副本；保留技能身份和启停状态。\n- 应用内及模型均可创建、编辑多文件技能；版本冲突时保留原文件和草稿。\n- 新增 `skills.list_resources`、`skills.validate`，读取返回包版本及目录代际。\n- 保存采用完整版本发布或关联目录事务恢复，保留登记与主文件备份。\n- 聊天中的技能错误展示具体原因、请求路径、读取根和建议。\n- 管理页与选择器自动同步技能变更，资源操作计入实时预算。\n\n同步至 IPC 19、Core schema 27；settings schema 19 不变。迁移包含 WAL 备份，失败回滚。\n\n发布为 Windows 预览版，并同步应用内 preview 更新通道。发布包由 CI 完成测试、隔离安装验收和更新器签名；源码保留在私有仓库。\n",
-  "pub_date": "2026-11-11T02:16:40.0231198Z",
+  "version": "0.16.2",
+  "notes": "# Punk Agent 0.16.2\n\n将已确认的非敏感模型参数作为新安装的默认配置；升级保留已有服务、模型和用户设置。\n\n- 默认首选 DeepSeek Flash，预置 DeepSeek V4 Pro；上下文 131072、输出上限 16384，声明使用原生工具。\n- 默认自动均衡路由，每条消息最多 5 次模型调用、2 个协作步骤，额外在线费用预算 1.00 美元，允许未知价格模型参与自动路由。\n- 连接、首输出、输出间隔、总请求超时分别为 15、60、30、600 秒。\n- 预置关闭的 Kimi 国内服务；保留 Demo。静态预设不代表连接或工具能力已经验证。\n- 模型服务增加“配置服务”入口，可为预置服务填写自己的凭据，重复保存保留服务身份、模型和启停状态。\n- 新添加或首次发现的匹配模型补齐缺失参数；服务端明确限制和不支持工具的结果优先，已有手动配置继续保留。\n- 编辑自定义服务保留其原有调用协议；未改变调用路由或凭据时保留能力验证记录。\n\n安装包不包含 API 密钥、凭据引用、聊天数据或原设备的验证记录。新用户仍需在模型服务页面配置自己的凭据。已有安装不会因升级而自动切换到这些出厂参数。\n\n本版按 Windows 预览版渠道发布，公开仓库仅分发安装包、校验文件、更新签名和说明；源码继续保留在私有仓库。正式发布包需通过 CI 测试、隔离安装验收和更新器签名，并同步 preview 更新通道。IPC 19、Core schema 27、settings schema 19 保持不变。\n",
+  "pub_date": "2026-11-16T13:14:53.6978626Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.16.1-preview.1/Punk-Agent-0.16.1-windows-x86_64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeGt1WTRvdmVrVldoUUJBcTVxdTFBSGx3UCs2dnhtdnJKMXU2RDdlUGFLTlBkKzE2amRkd3BMRUxGbXJIdEozcXpLUk5zWTU3ZXhhaHNTekt6dTRvWWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzYzMzg5CWZpbGU6UHVuayBBZ2VudF8wLjE2LjFfeDY0LXNldHVwLmV4ZQpSZXo0SHAvNVB4eFdiR3NjbzlJZDRZNW9iZVVEMXE2SWF5dUhwQjk0VGJQbzV5WTlQc1A2c3RLUVpnM1E4K05qUy9JaGNrbkhJK2pualFZOHdyakpDUT09Cg=="
+      "url": "https://github.com/ZCchou/punkagent-releases/releases/download/v0.16.2-preview.2/Punk-Agent-0.16.2-windows-x86_64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTYXdpYzJnVGJzeHNxT3loeE55dFJGNkNDT1NtV01vQmpkWTFNM1NPM3lZdHYwZ0FRZi85R3FjOW1EZjk5Q2QrYkI2QUl2Z1k4UVlBN2ZqNEJ3RkJ4ckJsWWhCeWRHVWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODM0ODgyCWZpbGU6UHVuayBBZ2VudF8wLjE2LjJfeDY0LXNldHVwLmV4ZQptZ3hwNGs5YTZWV0tXS2dJTk5XVzFqeDRJRk92KzhjY2lhakhUUDdLek5xMExXaFBNcmFEaGVIeHRkQ3NCeENHdCsxQVQ0SnVHZGQySjFYdVBjdzlEdz09Cg=="
     }
   }
 }
